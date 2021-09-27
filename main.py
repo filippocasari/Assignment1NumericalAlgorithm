@@ -5,7 +5,7 @@ import numpy as np  # to work with arrays
 n = 4  # number of segments
 total_time = 10  # total time of her journey
 with_error = False
-num_of_iter = 1000  # can be set by user. Number of iterations to reach the value of c
+num_of_iter = 400  # can be set by user. Number of iterations to reach the value of c
 
 
 #  we want to compute C value
@@ -27,13 +27,13 @@ def calculate_c_parameter(distances, speeds, previus_c):
 
 # calculate f(x). Polynomial function of third grade.
 def calculate_y_function(x_temp):
-    return (distances[0] / (speeds[0] + x_temp)) + (distances[1] / (speeds[1] + x_temp)) \
-           + (distances[2] / (speeds[2] + x_temp)) + (
-                   distances[3] / (speeds[3] + x_temp)) - total_time
+        return (distances[0] / (speeds[0] + x_temp)) + (distances[1] / (speeds[1] + x_temp)) \
+               + (distances[2] / (speeds[2] + x_temp)) + (
+                       distances[3] / (speeds[3] + x_temp)) - total_time
 
 
 if __name__ == '__main__':
-    c = 0  # arbitrary starting c
+    c = 0.0  # arbitrary starting c
     # set up plot
     fig = plt.figure()  # create a figure
     plt.axhline(y=0, color='k')
@@ -45,20 +45,19 @@ if __name__ == '__main__':
     # x points on x axe
     x = np.linspace(-2, 3, 100)
     # stopping if function is smaller or greater than some error
-    if with_error:  # calculate this error if user wants to work woth errors
-        error = 1 * 10 ^ (-2)
+
     y = calculate_y_function(x)  # calculate function for plot
 
     for k in range(num_of_iter):  # loop to find the root of f(x)
         c = calculate_c_parameter(distances, speeds, c)  # compute c updated
-
         if with_error:
+            error = 1 * 10 ^ (-2)  # calculate this error if user wants to work with errors
             y_temp = calculate_y_function(c)  # calculate y if necessary. We want to check if f(x)
             # is enough small to stop our algorithm
-            if -error < y_temp < error: # check condition
+            if -error < y_temp < error:  # check condition
                 print("STOPPING LOOP...ROOT FOUND")
                 print("Value of c: ", c, "Value of Y(c) : ", y_temp)
-                break # stop the loop if we have already found the root
+                break  # stop the loop if we have already found the root
         print("Values of c : ", c)
 
     # plotting f(x)
