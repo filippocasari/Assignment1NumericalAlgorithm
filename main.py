@@ -1,3 +1,10 @@
+######### ASSIGNMENT ONE ##########
+###################################
+######### NEWTON's METHOD #########
+###################################
+# FILIPPO CASARI's IMPLEMENTATION #
+###################################
+
 import sys  # just to print on stderr
 import matplotlib.pyplot as plt  # to plot math functions
 import numpy as np  # to work with arrays
