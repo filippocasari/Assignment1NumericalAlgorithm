@@ -43,7 +43,7 @@ if __name__ == '__main__':
     # arrays of speeds
     speeds = [3, 2, 6, 1]
     # x points on x axe
-    x = np.linspace(-2, 3, 100)
+    x = np.linspace(-1, 3, 100)
     # stopping if function is smaller or greater than some error
 
     y = calculate_y_function(x)  # calculate function for plot
