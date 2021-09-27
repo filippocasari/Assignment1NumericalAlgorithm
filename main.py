@@ -70,3 +70,5 @@ if __name__ == '__main__':
     # plotting f(x)
     plt.plot(x, y, 'r')
     plt.show()
+
+#  end of file
