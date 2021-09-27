@@ -27,9 +27,9 @@ def calculate_c_parameter(distances, speeds, previus_c):
 
 # calculate f(x). Polynomial function of third grade.
 def calculate_y_function(x_temp):
-        return (distances[0] / (speeds[0] + x_temp)) + (distances[1] / (speeds[1] + x_temp)) \
-               + (distances[2] / (speeds[2] + x_temp)) + (
-                       distances[3] / (speeds[3] + x_temp)) - total_time
+    return (distances[0] / (speeds[0] + x_temp)) + (distances[1] / (speeds[1] + x_temp)) \
+           + (distances[2] / (speeds[2] + x_temp)) + (
+                   distances[3] / (speeds[3] + x_temp)) - total_time
 
 
 if __name__ == '__main__':
